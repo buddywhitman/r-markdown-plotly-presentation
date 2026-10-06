@@ -1,0 +1,60 @@
+---
+title: "Interactive 3D Cosmic Data Exploration"
+author: "Data Science Presentation"
+date: "October 7, 2026"
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+---
+
+```{r setup, include=FALSE}
+library(plotly)
+```
+
+## Welcome to Cosmic Data Exploration
+
+- **Document Date:** October 7, 2026
+- **Topic:** 3D Interactive Visualization of Astronomical Particle Dynamics
+- **Technology:** R Markdown + Plotly (ioslides presentation)
+
+> *"Exploring high-dimensional astronomical particle distributions through rich, interactive Plotly visualizations."*
+
+---
+
+## Interactive Plotly 3D Particle Energy Map
+
+```{r plotly-chart, echo=FALSE, fig.width=9, fig.height=5}
+set.seed(42)
+n <- 350
+theta <- runif(n, 0, 2 * pi)
+r <- runif(n, 0.5, 5)
+x <- r * cos(theta) + rnorm(n, sd = 0.1)
+y <- r * sin(theta) + rnorm(n, sd = 0.1)
+z <- (r^1.2) * sin(theta * 2) + rnorm(n, sd = 0.2)
+energy <- sqrt(x^2 + y^2 + z^2)
+
+plot_ly(
+  x = ~x, y = ~y, z = ~z,
+  color = ~energy,
+  type = "scatter3d",
+  mode = "markers",
+  marker = list(size = 5, opacity = 0.85)
+) %>%
+layout(
+  title = "3D Galactic Particle Energy Distribution",
+  scene = list(
+    xaxis = list(title = "Spatial X (kpc)"),
+    yaxis = list(title = "Spatial Y (kpc)"),
+    zaxis = list(title = "Spatial Z (kpc)")
+  )
+)
+```
+
+---
+
+## Key Presentation Highlights
+
+- **Dynamic Interactivity:** Orbit, pan, and zoom in 3D space directly within the browser presentation.
+- **Continuous Color Mapping:** Visualizes energy intensity dynamically mapped across 3D coordinates.
+- **R Markdown Powered:** Built seamlessly with `rmarkdown` and `plotly` htmlwidgets.
