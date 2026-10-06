@@ -3,28 +3,29 @@ title: "Interactive 3D Cosmic Data Exploration"
 author: "Data Science Presentation"
 date: "October 7, 2026"
 output:
-  ioslides_presentation:
-    widescreen: true
-    smaller: true
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
 ---
 
 ```{r setup, include=FALSE}
 library(plotly)
 ```
 
-## Welcome to Cosmic Data Exploration
+# Welcome to Cosmic Data Exploration
 
 - **Document Date:** October 7, 2026
 - **Topic:** 3D Interactive Visualization of Astronomical Particle Dynamics
-- **Technology:** R Markdown + Plotly (ioslides presentation)
+- **Technology:** R Markdown + Plotly
 
 > *"Exploring high-dimensional astronomical particle distributions through rich, interactive Plotly visualizations."*
 
 ---
 
-## Interactive Plotly 3D Particle Energy Map
+# Interactive Plotly 3D Particle Energy Map
 
-```{r plotly-chart, echo=FALSE, fig.width=9, fig.height=5}
+```{r plotly-chart, echo=FALSE, fig.width=9, fig.height=6}
 set.seed(42)
 n <- 350
 theta <- runif(n, 0, 2 * pi)
@@ -53,7 +54,7 @@ layout(
 
 ---
 
-## Key Presentation Highlights
+# Key Presentation Highlights
 
 - **Dynamic Interactivity:** Orbit, pan, and zoom in 3D space directly within the browser presentation.
 - **Continuous Color Mapping:** Visualizes energy intensity dynamically mapped across 3D coordinates.
